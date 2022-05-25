@@ -1,0 +1,103 @@
+/* 
+  Global CSS  
+*/
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #1e1d1d;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+  padding: 0px;
+  margin: 0px;
+  font-family: monospace;
+}
+.btn {
+  padding: 12px 18px;
+  border-radius: 5px;
+  margin: 4px 10px;
+  box-shadow: 3px 3px 8px #877c7c;
+  border: thin solid #d0dbdf;
+}
+.btn.cancel {
+  background-color: #e0481a;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  opacity: 1;
+  transition: 0.3s;
+}
+.btn.save {
+  background-color: #1763b9;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  opacity: 1;
+  transition: 0.3s;
+}
+.btn.add {
+  background-color: #1bca4f;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  opacity: 1;
+  transition: 0.3s;
+}
+.btn.delete {
+  background-color: #9b59b6;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  opacity: 1;
+  transition: 0.3s;
+}
+.btn:hover {opacity: 0.6}
+.line-divider {
+  border: 0.1px solid #80808057 !important;
+}
+.form-scandiweb{
+  width: 100%;
+  height: 35px;
+  border-radius: 7px;
+}
+.delete-checkbox[type=checkbox]{
+  width: 18px;
+  height: 18px;
+  accent-color: #9b59b6;
+}
+.page-title {
+  color: #1763b9;
+  line-height: 2;
+}
+.errorMessage{
+  padding: 26px;
+  margin: 20px 0px;
+  border-radius: 8px;
+  background: red;
+  color: white;
+  font-size: 18px;
+  box-shadow: 8px 7px 12px lightgrey;
+}
+.errorMessage span {
+  float: right;
+  line-height: 0.6;
+  font-weight: 700;
+  font-size: 31px;
+  cursor: pointer;
+}
+.hide {
+  display: none;
+}
