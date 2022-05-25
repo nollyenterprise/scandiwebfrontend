@@ -22,7 +22,7 @@ export default function Home() {
     setProductType(req.target.value);
   }
   const submitHandler = async () => {
-    const rawResponse = await fetch('https://scandiwebjwd.000webhostapp.com/server/', {
+    const rawResponse = await fetch('https://applications.tekxus.com/scandiwebjwd/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   const getProduct = async () => {
-    const rawResponse = await fetch('https://scandiwebjwd.000webhostapp.com/server/', {
+    const rawResponse = await fetch('https://applications.tekxus.com/scandiwebjwd/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ export default function Home() {
         id.push(element.getAttribute("req"));
     });
     if(id.length){
-      const rawResponse = await fetch('https://scandiwebjwd.000webhostapp.com/server/', {
+      const rawResponse = await fetch('https://applications.tekxus.com/scandiwebjwd/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
