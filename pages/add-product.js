@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const router = useRouter();
-  const [ productType, setProductType ] = useState('1');
+  const [ productType, setProductType ] = useState('DVD');
   const [ sku, setSku ] = useState('');
   const [ name, setName ] = useState('');
   const [ price, setPrice ] = useState('');
@@ -108,17 +108,17 @@ export default function Home() {
                 <div>
                     <label>TYPE SWITCHER</label>
                     <select id="productType" className="form-scandiweb" onChange={typeSwitcher}>
-                        <option id="DVD" value="1">DVD</option>
-                        <option id="Furniture" value="2">Furniture</option>
-                        <option id="Book" value="3">Book</option>
+                        <option value="DVD">DVD</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Book">Book</option>
                     </select>
                 </div>
-                {productType=="1"?
+                {productType=="DVD"?
                 <DvdOption 
                   size={size} 
                   setSize={setSize}
                 />:
-                productType=="2"?
+                productType=="Furniture"?
                 <FurnitureOption
                   height={height}
                   width={width}
