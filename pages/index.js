@@ -20,7 +20,7 @@ export default function Home() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify( {"action":"getProducts", "productType": "all", id: "0"} )
+      body: JSON.stringify( {"action":"getProducts", "productType": "All", id: "0"} )
     });
     const response = await rawResponse.json();
     if(response.code){
@@ -43,7 +43,7 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify( {"action":"deleteProducts", "productType": "all", id: id.join(",")} )
+        body: JSON.stringify( {"action":"deleteProducts", "productType": "All", id: id.join(",")} )
       });
       const response = await rawResponse.json();
       if(response.code){
