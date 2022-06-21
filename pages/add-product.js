@@ -22,12 +22,12 @@ export default function Home() {
     setProductType(req.target.value);
   }
   const submitHandler = async () => {
-    const rawResponse = await fetch('https://applications.tekxus.com/scandiwebjwd/', {
+    const rawResponse = await fetch(process.env.serverBaseURL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify( {"action":"Add",productType,sku,name,price,size,height,width,length,weight} )
+      body: JSON.stringify( {"action":"save",productType,sku,name,price,size,height,width,length,weight} )
     });
     const response = await rawResponse.json();
     if(response.code)
@@ -64,8 +64,9 @@ export default function Home() {
         <hr className='line-divider' />
         <div className={styles.container}>
           <div className={'errorMessage '+(!isError?'hide':'')}>
-            Error! {errorMessage}
             <span onClick={closeErrorMessage}>&times;</span>
+            Error!
+            <div dangerouslySetInnerHTML={{__html: errorMessage}} />
           </div>
           <div className={styles.addProducts}>
             <form id="product_form"  className={styles.productForm}>

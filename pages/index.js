@@ -15,12 +15,12 @@ export default function Home() {
   }, []);
 
   const getProduct = async () => {
-    const rawResponse = await fetch('https://applications.tekxus.com/scandiwebjwd/', {
+    const rawResponse = await fetch(process.env.serverBaseURL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify( {"action":"Get"} )
+      body: JSON.stringify( {"action":"getProducts", "productType": "all", id: "0"} )
     });
     const response = await rawResponse.json();
     if(response.code){
@@ -38,12 +38,12 @@ export default function Home() {
         id.push(element.getAttribute("req"));
     });
     if(id.length){
-      const rawResponse = await fetch('https://applications.tekxus.com/scandiwebjwd/', {
+      const rawResponse = await fetch(process.env.serverBaseURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify( {"action":"Delete", id: id.join(",")} )
+        body: JSON.stringify( {"action":"deleteProducts", "productType": "all", id: id.join(",")} )
       });
       const response = await rawResponse.json();
       if(response.code){
@@ -90,7 +90,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.products}>
 
-            {allProduct.map((e,k) => {
+            {allProduct && allProduct.map((e,k) => {
                 return (
                   <div key={k}>
                     <span>
